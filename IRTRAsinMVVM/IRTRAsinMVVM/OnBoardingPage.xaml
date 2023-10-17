@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="IRTRAsinMVVM.OnBoardingPage"
+             Visual="Material"
+             Padding="0">
+    <ScrollView Orientation="Vertical"
+                Padding="0"
+                Margin="0">
+        <Grid HorizontalOptions="FillAndExpand"
+              VerticalOptions="EndAndExpand"
+              ColumnSpacing="4"
+              RowSpacing="28"
+              Padding="24, 16, 24, 24"
+              Margin="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button Text="Inscribirme"
+                    Command="{Binding GoToSignInCommand}" />
+            <Button Grid.Column="1"
+                    Text="Iniciar sesión"
+                    StyleClass="Normal"
+                    Command="{Binding GoToLoginCommand}" />
+            <Label Grid.Row="1"
+                   Grid.ColumnSpan="2"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center"
+                   Text="Iniciar como invitado"
+                   TextDecorations="Underline"
+                   Padding="8, 4"
+                   StyleClass="BodyBold">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1"
+                                          Command="{Binding GoToHomeCommand}" />
+                </Label.GestureRecognizers>
+            </Label>
+        </Grid>
+    </ScrollView>
+</ContentPage>
